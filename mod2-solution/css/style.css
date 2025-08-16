@@ -1,0 +1,81 @@
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* Container row */
+.row {
+  width: 100%;
+}
+
+/* Section styles */
+.section {
+  border: 1px solid black;
+  background-color: #f2f2f2;
+  padding: 40px 15px 15px 15px; /* push text down for title space */
+  margin: 10px;
+  position: relative;
+}
+
+/* Section titles */
+.section-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+
+/* Different background colors for titles */
+.section-title.chicken {
+  background-color: #ffcccb; /* light red */
+}
+
+.section-title.beef {
+  background-color: #c4f0c5; /* light green */
+}
+
+.section-title.sushi {
+  background-color: #cce5ff; /* light blue */
+}
+
+/* Desktop view: 3 equal columns */
+@media (min-width: 992px) {
+  .section {
+    float: left;
+    width: 31%; /* 3 sections in one row with margins */
+  }
+}
+
+/* Tablet view: 2 on top, 1 full width below */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    float: left;
+    width: 48%; /* two fit side by side */
+  }
+
+  .section:nth-child(3) {
+    width: 98%; /* full row */
+  }
+}
+
+/* Mobile view: full width */
+@media (max-width: 767px) {
+  .section {
+    width: 100%;
+  }
+}
